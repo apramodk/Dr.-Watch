@@ -7,16 +7,15 @@ api_responce = terra.list_providers()
 parsed_responce = api_responce.get_parsed_response()
 #print(parsed_responce)
 
-user_id = str(uuid.uuid4())
+reference_id = str(uuid.uuid4())
 
 widget_responce = terra.generate_widget_session(
-    reference_id=user_id,
+    reference_id=reference_id,
     providers=["APPLE", "GOOGLE", "GARMIN", "FITBIT"],
-    auth_success_redirect_url="https://example.com/success",
-    auth_failure_redirect_url="https://example.com/failure",
+    show_disconnect=True,
     language="en"
-).get_parsed_response()
+)
 
-print(widget_responce)
+print(widget_responce.json)
 
 
