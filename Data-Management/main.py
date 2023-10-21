@@ -1,5 +1,8 @@
 from terra.base_client import Terra
 
+from flask import Flask
+
+
 import uuid
 
 terra = Terra(api_key='EEFXq0ofN_SJ5fg7hzOb2r02HIw5wtUZ', dev_id='drwatch-testing-a1uqRDmD1q', secret='secret')
@@ -16,6 +19,7 @@ widget_responce = terra.generate_widget_session(
     language="en"
 )
 
-print(widget_responce.json)
+terraModel = terraModel()
+print(widget_responce)
 
 
